@@ -12,8 +12,8 @@ class ReadOnlyFieldsMixin:
             # field.widget.attrs['readonly'] = True  # readonly for all fields at once
 
 class TimeRestrictedMixin:
-    access_time_start = time(9, 0)
-    access_time_end = time(23, 0)
+    access_time_start = time(0, 0)
+    access_time_end = time(23, 59)
 
     def dispatch(self, request, *args, **kwargs):
         current_time = datetime.now().time()

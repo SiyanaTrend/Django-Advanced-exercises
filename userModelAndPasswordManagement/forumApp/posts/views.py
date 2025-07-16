@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.forms import modelform_factory
 from django.http import HttpResponse
@@ -182,7 +183,7 @@ class Dashboard(ListView):
 
 '''Example - static way to add post with CBV - CreateView'''
 
-class CreatePost(TimeRestrictedMixin, CreateView):
+class CreatePost(LoginRequiredMixin, TimeRestrictedMixin, CreateView):
     model = Post
     form_class = PostCreateForm
     success_url = reverse_lazy('dashboard')

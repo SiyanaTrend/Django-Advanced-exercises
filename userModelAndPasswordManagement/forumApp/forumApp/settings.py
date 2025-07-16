@@ -146,4 +146,4 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 
-
+LOGOUT_REDIRECT_URL = reverse_lazy('dashboard')

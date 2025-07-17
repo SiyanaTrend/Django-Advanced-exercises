@@ -76,7 +76,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'forumApp.wsgi.application'
 
 AUTHENTICATION_BACKENDS = [
-    'accounts.authentication.EmailBackend',  # try to authenticate with email
+    'accounts.authentication.CustomAuthBackend',  # try to authenticate with email
     'django.contrib.auth.backends.ModelBackend',  # fallback to authenticate with username
 ]
 

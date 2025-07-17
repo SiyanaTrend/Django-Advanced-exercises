@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
 from accounts.forms import CustomUserCreationForm
+from accounts.models import Profile
 
 UserModel = get_user_model()
 
@@ -38,3 +39,7 @@ class UserModelAdmin(UserAdmin):
         ),
         ("Important dates", {"fields": ("last_login",)}),
     )
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ['user', 'phone_number']

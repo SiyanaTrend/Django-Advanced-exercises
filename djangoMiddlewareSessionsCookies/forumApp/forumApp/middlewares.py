@@ -11,6 +11,7 @@ class MeasureTimeMiddleware(MiddlewareMixin):
         print(f"Request to {request.path} took {self.end_time - self.start_time:.4f} seconds.")
         return response
 
+
 '''middleware with class - not good to be used'''
 # class MeasureTimeMiddleware:
 #     def __init__(self, get_response):
@@ -24,6 +25,7 @@ class MeasureTimeMiddleware(MiddlewareMixin):
 #         print(f"Request to {request.path} took {end_time - start_time:.4f} seconds.")
 #
 #         return response
+
 
 '''middleware with function'''
 # def measure_time(get_response):

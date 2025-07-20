@@ -18,6 +18,18 @@ from posts.forms import PostCreateForm, PostDeleteForm, SearchForm, CommentFrom,
 from posts.mixins import TimeRestrictedMixin
 from posts.models import Post
 
+
+
+def counter_view(request):
+    # if 'counter' in request.session:
+    #     request.session['counter'] += 1
+    # else:
+    #     request.session['counter'] = 0
+    request.session['counter'] = request.session.get('counter', 0) + 1
+    return HttpResponse(f"View count: {request.session['counter']}")
+
+
+
 '''example 1'''
 # def index(request):
 #     return render(request, 'common/base.html')

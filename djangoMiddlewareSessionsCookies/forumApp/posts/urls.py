@@ -1,9 +1,10 @@
 from django.urls import path, include
 from posts import views
-from posts.views import MyRedirectView
+from posts.views import MyRedirectView, counter_view
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
+    path('counter/', counter_view, name='counter'),
     path('dashboard/', views.Dashboard.as_view(), name='dashboard'),
     path('post/', include([
         path('add/', views.CreatePost.as_view(), name='add-post'),
